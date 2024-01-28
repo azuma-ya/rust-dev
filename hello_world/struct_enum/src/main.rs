@@ -1,5 +1,3 @@
-use std::num::sqrt;
-
 #[derive(Debug)]
 struct Vec2 {
     x: i32,
@@ -27,6 +25,7 @@ impl Vec2 {
     }
 }
 
+#[derive(Debug)]
 struct Complex {
     a: i32,
     b: i32,
@@ -57,9 +56,6 @@ impl Complex {
             b: self.a * other.b - self.b * other.a,
         }
     }
-    fn abs(&self) -> i32 {
-        ((self.a.pow(2) + self.b.pow(2)) as f64).sqrt() as i32
-    }
 }
 
 fn main() {
@@ -69,5 +65,5 @@ fn main() {
 
     let p = Complex { a: 5, b: 10 };
     let r = Complex { a: 3, b: 5 };
-    println!("{:?}", p.sub(&r).add(&r).abs());
+    println!("{:?}", p.sub(&r).add(&r).times(&r));
 }
